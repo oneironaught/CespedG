@@ -23,6 +23,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }, interval);
   }
 
+  // Smooth scrolling for any internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Simple fade-in animation when scrolling
+const fadeElements = document.querySelectorAll('.service-card, .testimonial');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.style.opacity = 1;
+  });
+}, { threshold: 0.1 });
+
+fadeElements.forEach(el => {
+  el.style.opacity = 0;
+  el.style.transition = 'opacity 0.6s';
+  observer.observe(el);
+});
+
   // Apply Fade-In to Target Elements
   const elements = document.querySelectorAll("header, section, footer");
   elements.forEach((el, index) => {

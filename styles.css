@@ -193,6 +193,20 @@ margin-top: 10px;
   color: black;
 }
 
+/* Form Styling */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+}
+input, textarea {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
 /* Footer Styling */
 footer {
   background-color: #4CAF50;
