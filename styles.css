@@ -1,408 +1,309 @@
-/* General Styling */
-html {
-  scroll-behavior: smooth;
+:root {
+    --green: #0A3D2A;
+    --light-green: #1A5F45;
+    --accent: #4ADE80;
+    --text: #333;
 }
+
+* { margin:0; padding:0; box-sizing:border-box; overflow-x: hidden;}
 
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  padding-top: 80px; /* Adjust to match navbar height */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
 }
 
-/* Header Styling */
-header {
-  position: absolute;
-  height: 200px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effects */
-}  
-
-/* Header H1 Styling */
-header h1 {
-  font-size: 2.8rem; /* Adjust the size for emphasis */
-  font-weight: 700; /* Bold for prominence */
-  text-transform: uppercase; /* Optional: Capitalize all letters */
-  color: white; /* Contrast against a dark or busy background */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add depth with a subtle shadow */
-  margin: 0; /* Remove default margins for better alignment */
-  padding: 20px 0; /* Adjust padding for spacing */
-  text-align: center; /* Center align the text */
+/* NAV */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.97);
+    z-index: 1000;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.logo { font-size: 2rem; font-weight: 800; color: var(--green); display: flex; align-items: center; gap: 8px; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
+.nav-links a:hover { color: var(--green); }
+.hamburger { display: none; background: none; border: none; font-size: 1.8rem; color: var(--green); cursor: pointer; }
+.lang-switch {
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-/* Header Paragraph Styling */
-header p {
-  font-size: 1.2rem; /* Smaller, readable size */
-  font-weight: 300; /* Light font weight for elegance */
-  color: #f0f0f0; /* Softer color for the paragraph text */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
-  margin: 10px 0; /* Add spacing around the text */
-  text-align: center; /* Center align the paragraph */
-  line-height: 1.8; /* Improve readability with better spacing */
+/* MOBILE MENU */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+.mobile-menu ul { list-style: none; }
+.mobile-menu a {
+    display: block;
+    padding: 1rem 5%;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
 }
 
-/* Optional: Header Content Wrapper */
-header .header-content {
-  position: absolute; /* Position content over the header image */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for perfect centering */
-  text-align: center; /* Center all text */
-  z-index: 2; /* Ensure it appears above the background */
+/* HERO */
+.hero {
+    height: 100vh;
+    min-height: 700px;
+    background: linear-gradient(rgba(10,61,42,0.75), rgba(10,61,42,0.75)), url('assets/images/complete_lawn.png') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    justify-content: center;
 }
-  
-/* Logo Styling */
-.logo-img {
-  width: 200px; /* Adjust size of the logo */
-  height: auto;
-  padding-right: 25px; /* Spacing around logo */
-  padding-left: 25px;
-  padding-top: 25px;
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    z-index: 2;
 }
-    
-/* General Navbar Styling */
-.navbar {
-  position: absolute;
-  top: 350px; /* Adjust this value to match the height of your header */
-  width: 100%; /* Ensure it spans the entire width */
-  z-index: 1000; /* Keep it above other elements */
-  background-color: rgba(255, 255, 255, 0.95); /* Slight transparency for professional look */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  padding: 0.5rem 1rem; /* Adjust padding */
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; line-height: 1.1;}
+.hero p { font-size: 1.4rem; margin-bottom: 2rem; max-width: 600px; }
+.cta-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+.cta-btn {
+    background: var(--accent);
+    color: #000;
+    padding: 1.1rem 2.8rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-
-.navbar-nav {
-  display: flex; /* Force the nav items into a horizontal row */
-  gap: 30px; /* Add spacing between the links */
-  margin: 0;
-  padding: 0;
-  list-style: none; /* Remove default list styling */
+.cta-btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(74,222,128,0.4); }
+.phone-btn {
+    background: white;
+    color: var(--green);
+    padding: 1.1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
 }
-
-.navbar-nav .nav-item {
-  list-style: none;
-}
-
-.navbar-nav .nav-link {
-  font-size: 1rem; /* Adjust font size for readability */
-  font-weight: 500;
-  text-decoration: none;
-  color: #333; /* Default color for links */
-  padding: 5px 10px; /* Add clickable padding around the links */
-  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.navbar-nav .nav-link:hover {
-  color: white;
-  background-color: #4CAF50;
-  border-radius: 5px;
+.trust-pills {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-/* Hero Section */
-#home {
-  background: url('assets/images/hero-lawn.jpg') no-repeat center center/cover;
-  padding: 80px 20px;
-  color: white;
-  margin-top: 0px;
+/* TRUST BAR */
+.trust-bar {
+    background: var(--green);
+    color: white;
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-#home h2 {
-  font-weight: 700;
+/* SECTIONS */
+.section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--green);
 }
 
-#home p {
-  font-size: 1.2rem;
+/* SERVICES */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
-#home .btn {
-  font-size: 1rem;
-  padding: 10px 20px;
+.service-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-/* Services Section */
-#services .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-#services .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+/* New image container - controlled entirely in CSS */
+.service-image {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#services .card-title {
-  color: #4CAF50;
-  font-weight: bold;
+/* YOUR ASSETS GO HERE - replace the URLs with your own files */
+.service-card-1 .service-image { background-image: url('assets/images/bermuda-renovation.png'); }
+.service-card-2 .service-image { background-image: url('assets/images/man_mowing.jpg'); }
+.service-card-3 .service-image { background-image: url('assets/images/weed-control.png'); }
+.service-card-4 .service-image { background-image: url('assets/images/res_mowing.jpg'); }
+
+/* Card content (text) */
+.card-content {
+    padding: 1.8rem;
 }
 
-#services .card-text {
-  color: #555;
+/* BEFORE / AFTER */
+.before-after-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 2rem;
+}
+.ba-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.ba-card img { width: 100%; height: auto; display: block; }
+
+/* ABOUT */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* About Section */
-#about p {
-font-size: 1.2rem;
-line-height: 1.8;
-color: #555;
+/* TESTIMONIALS */
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+.testimonial {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 16px;
+    font-style: italic;
 }
 
-/* Testimonials Section */
-blockquote {
-font-size: 1rem;
-font-style: italic;
-color: #333;
-background: #f9f9f9;
-padding: 15px;
-border-left: 5px solid #4CAF50;
+/* FAQ */
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
 }
-
-blockquote-footer {
-font-size: 0.9rem;
-color: #888;
-margin-top: 10px;
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
 }
-
-/* Carousel Section Styling */
-#carousel {
-  background-color: #f9f9f9; /* Light background for the carousel section */
+.faq-question {
+    padding: 1.5rem;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.carousel img {
-  height: 400px; /* Set height for the carousel images */
-  object-fit: cover; /* Ensure images cover the space without distortion */
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
 }
+.faq-answer.active { display: block; }
+.faq-icon { transition: transform 0.3s; }
 
-.carousel-caption h5 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #4CAF50;
+/* CONTACT */
+.contact-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
 }
-
-.carousel-caption p {
-  font-size: 1rem;
-  color: black;
-}
-
-/* Form Styling */
 form {
-  max-width: 600px;
-  margin: 2rem auto;
-  display: grid;
-  gap: 1rem;
+    background: white;
+    color: #333;
+    padding: 2.5rem;
+    border-radius: 20px;
 }
-input, textarea {
-  padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
+form input,
+form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 1.1rem;
 }
 
-/* Footer Styling */
+/* FOOTER */
 footer {
-  background-color: #4CAF50;
-  color: white;
-  padding: 20px 0;
+    background: #111;
+    color: #ddd;
+    padding: 4rem 5% 2rem;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 2rem;
 }
 
-footer p {
-  margin: 0;
+/* FADE-IN ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* General Styling for Small Devices */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-  header {
-    height: 180px; /* Reduce header height on small screens */
-  }
-
-  .header-content {
-    top: 40%; /* Adjust vertical position */
-    padding: 0 10px; /* Add padding for smaller screens */
-  }
-
-  header h1 {
-    font-size: 2rem; /* Smaller font size for heading */
-  }
-
-  header p {
-    font-size: 1rem; /* Adjust font size for paragraph */
-    line-height: 1.5; /* Slightly tighter line spacing */
-  }
-
-  .navbar {
-    flex-wrap: nowrap; /* Prevent wrapping of the navbar content */
-  }
-
-  .navbar-nav {
-    justify-content: flex-end; /* Align links to the right */
-    gap: 10px; /* Reduce spacing between links */
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-    padding: 5px; /* Reduce padding for better fit */
-  }
-
-  #home {
-    margin-top: 180px; /* Adjust margin to match smaller header */
-    padding: 40px 20px; /* Reduce padding for hero section */
-  }
-
-  #home h2 {
-    font-size: 1.8rem; /* Smaller font size for hero heading */
-  }
-
-  #home p {
-    font-size: 1rem; /* Adjust paragraph size */
-  }
-
-  #home .btn {
-    font-size: 1rem; /* Reduce button font size */
-    padding: 8px 15px; /* Compact button padding */
-  }
-}
-
-/* Medium Devices (Tablets) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  header {
-    height: 220px; /* Slightly smaller header */
-  }
-
-  .header-content {
-    top: 45%; /* Adjust content positioning */
-  }
-
-  header h1 {
-    font-size: 2.4rem; /* Reduce heading size */
-  }
-
-  header p {
-    font-size: 1.1rem; /* Adjust paragraph size */
-  }
-
-  .navbar {
-    padding: 0.5rem 1.5rem; /* Adjust navbar padding */
-  }
-
-  .navbar-nav {
-    gap: 15px; /* Adjust spacing between links */
-  }
-
-  #home {
-    margin-top: 220px; /* Match header height */
-    padding: 60px 20px; /* Adjust padding */
-  }
-
-  #home h2 {
-    font-size: 2.2rem; /* Slightly smaller hero heading */
-  }
-
-  #home p {
-    font-size: 1.1rem; /* Adjust paragraph font size */
-  }
-
-  #home .btn {
-    font-size: 1.1rem; /* Adjust button size */
-  }
-}
-
-/* Large Screens (Desktops and Laptops) */
-@media (min-width: 1025px) {
-  header {
-    height: 350px; /* Full-sized header for larger screens */
-  }
-
-  .header-content {
-    top: 50%; /* Center content vertically */
-  }
-
-  header h1 {
-    font-size: 3rem; /* Larger heading for desktops */
-  }
-
-  header p {
-    font-size: 1.2rem; /* Standard paragraph size */
-  }
-
-  .navbar {
-    padding: 0.7rem 2rem; /* Comfortable padding */
-  }
-
-  .navbar-nav {
-    gap: 20px; /* Increased spacing for better readability */
-  }
-
-  #home {
-    margin-top: 300px; /* Match header height */
-    padding: 80px 40px; /* Comfortable padding for hero section */
-  }
-
-  #home h2 {
-    font-size: 2.5rem; /* Larger hero heading */
-  }
-
-  #home p {
-    font-size: 1.2rem; /* Standard paragraph font size */
-  }
-
-  #home .btn {
-    font-size: 1.2rem; /* Larger button for desktops */
-    padding: 10px 20px; /* Comfortable button padding */
-  }
-}
-
-/* Extra Small Devices (Phones in Portrait Mode) */
-@media (max-width: 480px) {
-  header {
-    height: 150px; /* Smaller header for small devices */
-  }
-
-  .header-content {
-    top: 35%; /* Adjust vertical position */
-    padding: 0 5px; /* Add more padding for smaller screens */
-  }
-
-  header h1 {
-    font-size: 1.8rem; /* Smaller font size for heading */
-  }
-
-  header p {
-    font-size: 0.9rem; /* Smaller paragraph size */
-  }
-
-  .navbar {
-    padding: 0.2rem 0.5rem; /* Compact navbar padding */
-  }
-
-  .navbar-nav {
-    flex-direction: column; /* Stack links vertically */
-    gap: 8px; /* Tighter spacing between links */
-  }
-
-  #home {
-    margin-top: 150px; /* Match smaller header height */
-    padding: 30px 10px; /* Reduce padding for hero section */
-  }
-
-  #home h2 {
-    font-size: 1.6rem; /* Smaller hero heading */
-  }
-
-  #home p {
-    font-size: 0.9rem; /* Compact paragraph size */
-  }
-
-  #home .btn {
-    font-size: 0.9rem; /* Smaller button size */
-    padding: 6px 12px; /* Compact button padding */
-  }
+    .hamburger { display: block; }
+    .nav-links { display: none; }
+    .about-grid,
+    .contact-grid,
+    .before-after-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero { min-height: 600px; }
 }

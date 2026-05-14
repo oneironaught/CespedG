@@ -1,181 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional Lawn Care Services by Césped G. Call us today!">
-  <title>Césped G - Lawn Care Services</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Césped G | Cuidado de Césped en Weslaco & RGV</title>
+    <meta name="description" content="Expert Bermuda lawn care, mowing, renovations & landscaping in Weslaco, McAllen, Edinburg & the Rio Grande Valley. Family-owned. No contracts.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="bg-success text-white text-center py-3">
-    <!-- Logo Section -->
-    <a href="#" class="navbar-brand">
-      <img src="assets/images/cesped_logo4.jpg" alt="Césped Logo" class="logo-img" />
-    </a>
-    <h1 class="mt-3">Lawn Care Services</h1>
-    <p>Call Us: <a href="tel:9566788454" class="text-white">956-678-8454</a></p>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
-        <li class="nav-item"><a href="#carousel" class="nav-link">Photos</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="logo">
+            <i class="fas fa-leaf"></i>
+            Césped G
+        </div>
+        
+        <!-- Desktop Nav -->
+        <ul class="nav-links">
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#work" class="nav-link">Our Work</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Language Switch -->
+        <button onclick="toggleLanguage()" class="lang-switch">
+            <i class="fas fa-globe"></i>
+            <span id="lang-text">ES/EN</span>
+        </button>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="bg-light text-center py-5">
-    <div class="container">
-      <h1>Your Lawn, Our Care</h1>
-      <p>Transform your lawn with Césped G's expert services.</p>
-      <a href="https://calendly.com/cespedgtx/15min" target="_blank" class="btn btn-success btn-lg" role="button">
-        Get a Free Quote
-      </a>    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#work" class="nav-link">Our Work</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
     </div>
-  </section>
 
-  <!-- About Section -->
-  <section id="about" class="bg-light py-5">
-    <div class="container text-center">
-      <h2 class="text-success">About Us</h2>
-      <p class="mt-3">
-        Césped G is a trusted lawn care service provider dedicated to making your outdoor spaces beautiful and healthy. 
-        With years of experience, we pride ourselves on delivering top-notch landscaping, mowing, and tree trimming services 
-        to residential and commercial clients. Our team is passionate about creating green, sustainable environments that 
-        leave a lasting impression.
-      </p>
-    </div>
-  </section>
-
-    <!-- Photos Section -->
-  <section id="carousel" class="py-5">
-    <div class="container">
-      <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/images/complete_lawn.png" class="d-block w-100" alt="Beautiful Lawn">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/Landscape_Maintenance.png" class="d-block w-100" alt="Landscaping Design">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/lawn_city.png" class="d-block w-100" alt="Tree Trimming Service">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-5">
-    <div class="container text-center">
-      <h2 class="text-success">Our Services</h2>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="assets/images/man_mowing.jpg" class="card-img-top" alt="Lawn Mowing">
-            <div class="card-body">
-              <h5 class="card-title">Lawn Mowing</h5>
-              <p class="card-text">Keep your lawn pristine with our expert mowing services.</p>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 id="hero-title" class="fade-in">Lawn Care You Can Count On in the RGV</h1>
+            <p id="hero-subtitle" class="fade-in">Serving Weslaco, McAllen, Edinburg, Mercedes & the entire Rio Grande Valley, Texas</p>
+            
+            <div class="cta-group">
+                <a href="tel:9566788454" class="phone-btn">
+                    <i class="fas fa-phone"></i> (956) 678-8454
+                </a>
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="cta-btn">
+                    Get Free Quote
+                </button>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="assets/images/yardwork.jpg" class="card-img-top" alt="Landscaping">
-            <div class="card-body">
-              <h5 class="card-title">Landscaping</h5>
-              <p class="card-text">Beautiful and functional landscapes tailored to your needs.</p>
+
+            <div class="trust-pills">
+                <span><strong>4.9 ★</strong> Google Reviews</span>
+                <span>✅ Family Owned</span>
+                <span>✅ Licensed & Insured</span>
+                <span>✅ No Contracts</span>
+                <span>✅ Same-Day Response</span>
             </div>
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="assets/images/tree_trimming.jpg" class="card-img-top" alt="Tree Trimming">
-            <div class="card-body">
-              <h5 class="card-title">Tree Trimming</h5>
-              <p class="card-text">Ensure healthy and attractive trees on your property.</p>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div>4.9 ★ Google Reviews</div>
+        <div>✅ Family Owned</div>
+        <div>✅ Licensed & Insured</div>
+        <div>✅ No Contracts</div>
+        <div>✅ We Show Up</div>
+    </div>
+
+<!-- SERVICES SECTION (images removed from HTML) -->
+    <section class="section" id="services" style="background:#f8fafc;">
+        <h2 class="section-title fade-in" id="services-title">Our Most Popular Services</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in service-card-1">
+                <div class="service-image"></div>
+                <div class="card-content">
+                    <h3 id="service1-title">Bermuda Lawn Renovation</h3>
+                    <p id="service1-desc">Full lawn restoration, weed elimination, soil treatment and thick Bermuda establishment.</p>
+                </div>
             </div>
-          </div>
+            <div class="service-card fade-in service-card-2">
+                <div class="service-image"></div>
+                <div class="card-content">
+                    <h3 id="service2-title">Premium Weekly & Bi-Weekly Mowing</h3>
+                    <p id="service2-desc">Professional cut, edging, trimming & blowing. Your lawn always looks its best.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in service-card-3">
+                <div class="service-image"></div>
+                <div class="card-content">
+                    <h3 id="service3-title">Pre-Emergent & Weed Control</h3>
+                    <p id="service3-desc">Keep weeds out before they start. Safe for family & pets.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in service-card-4">
+                <div class="service-image"></div>
+                <div class="card-content">
+                    <h3 id="service4-title">Landscaping & Yard Cleanup</h3>
+                    <p id="service4-desc">Transform your outdoor space with expert design and maintenance.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-5">
-    <div class="container text-center">
-      <h2 class="text-success">What Our Clients Say</h2>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <blockquote class="blockquote">
-            <p>"Césped G completely transformed my backyard! Highly recommend their services."</p>
-            <footer class="blockquote-footer">Maria S.</footer>
-          </blockquote>
+    <!-- OUR WORK -->
+    <section class="section" id="work">
+        <h2 class="section-title fade-in" id="work-title">Real Results in the RGV</h2>
+        <div class="before-after-grid">
+            <div class="ba-card fade-in">
+                <h3 style="padding:1rem 1.5rem; background:#f8fafc;">Before</h3>
+                <img src="https://picsum.photos/id/870/800/500" alt="Before" loading="lazy" width="800" height="500">
+            </div>
+            <div class="ba-card fade-in">
+                <h3 style="padding:1rem 1.5rem; background:#f8fafc;">After</h3>
+                <img src="https://picsum.photos/id/1015/800/500" alt="After" loading="lazy" width="800" height="500">
+            </div>
         </div>
-        <div class="col-md-4">
-          <blockquote class="blockquote">
-            <p>"The team is professional and pays attention to detail. My lawn has never looked better!"</p>
-            <footer class="blockquote-footer">John D.</footer>
-          </blockquote>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <div class="about-grid">
+            <div>
+                <h2 class="section-title fade-in" style="text-align:left;" id="about-title">About Césped G</h2>
+                <p id="about-text" class="fade-in">We are a local, family-owned lawn care company based in Weslaco, Texas. Specializing in transforming tired yards into beautiful, thick Bermuda lawns that thrive in the Rio Grande Valley heat.</p>
+                <br>
+                <p><strong>Our promise:</strong> Reliable service, honest pricing, and lawns you’ll be proud to show off.</p>
+            </div>
+            <img src="https://picsum.photos/id/1016/800/600" alt="Team" loading="lazy" width="800" height="600" class="fade-in">
         </div>
-        <div class="col-md-4">
-          <blockquote class="blockquote">
-            <p>"Exceptional service and very reliable. Césped G is my go-to for all landscaping needs."</p>
-            <footer class="blockquote-footer">Emily R.</footer>
-          </blockquote>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials" style="background:#f8fafc;">
+        <h2 class="section-title fade-in" id="testimonials-title">What Our Clients Say</h2>
+        <div class="testimonials">
+            <div class="testimonial fade-in">
+                <p id="testimonial1">"Césped G completely transformed my backyard! Highly recommend their services."</p>
+                <strong>— Maria R., Weslaco</strong>
+            </div>
+            <div class="testimonial fade-in">
+                <p id="testimonial2">"The team is professional and pays attention to detail. My lawn has never looked better!"</p>
+                <strong>— Juan P., McAllen</strong>
+            </div>
+            <div class="testimonial fade-in">
+                <p id="testimonial3">"Exceptional service and very reliable. Césped G is my go-to for all landscaping needs."</p>
+                <strong>— Elena T., Edinburg</strong>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <h2 class="section-title fade-in" id="faq-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">How much does lawn service cost in the RGV?<span class="faq-icon">+</span></div>
+                <div class="faq-answer">Prices start at $65 per visit for standard mowing. Free quotes are always provided same-day.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Do you offer Bermuda-specific care?<span class="faq-icon">+</span></div>
+                <div class="faq-answer">Yes! We specialize in Bermuda grass renovation and maintenance perfect for South Texas heat.</div>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact" class="py-5">
-    <div class="container text-center">
-      <h2 class="text-success">Contact Us</h2>
-      <p>Call us at <a href="tel:9566788454" class="text-black">956-678-8454</a> or schedule a Free Consultation via Calendly below.</p>
-  <form action="https://formspree.io/f/xaqlgyod" method="POST">
-  <label for="name">Your Name</label>
-  <input type="text" id="name" name="name" required>
+    <!-- CONTACT FORM (Formspree Ready) -->
+    <section class="section" id="contact" style="background:var(--green); color:white;">
+        <div class="contact-grid">
+            <div>
+                <h2 id="contact-title" class="fade-in" style="font-size:2.8rem;">Ready for a Better Lawn?</h2>
+                <p id="contact-subtitle" class="fade-in" style="font-size:1.4rem;">Get your free quote today. Most quotes returned same day.</p>
+                <p style="margin:2rem 0; font-size:2.5rem; font-weight:700;">
+                    <a href="tel:9566788454" style="color:white; text-decoration:none;">(956) 678-8454</a>
+                </p>
+            </div>
+            <form id="quote-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
+                <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email (optional)">
+                <textarea name="message" id="message" placeholder="Tell us about your lawn needs..." rows="4" required></textarea>
+                <button type="submit" class="cta-btn">Send Request →</button>
+            </form>
+        </div>
+    </section>
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required>
+    <footer>
+        <div class="footer-content">
+            <p style="font-size:1.3rem; color:var(--accent);">© 2026 Césped G, LLC</p>
+            <p>Weslaco, Texas • Serving the entire Rio Grande Valley</p>
+            <a href="tel:9566788454" style="color:#4ADE80; font-size:1.5rem;">(956) 678-8454</a>
+        </div>
+    </footer>
 
-  <label for="phone">Phone</label>
-  <input type="tel" id="phone" name="phone">
-
-  <label for="message">Message / Service Needed</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
-
-  <button type="submit" style="background:#00a651; color:white; padding:12px 24px; border:none; cursor:pointer;">
-    Send Message
-  </button>
-</form>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/cespedgtx/15min" style="min-width:320px; height:630px;"></div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-success text-white text-center py-3">
-    <p>&copy; 2024 Césped G. All Rights Reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
