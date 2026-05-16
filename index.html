@@ -85,7 +85,7 @@
         <div>✅ We Show Up</div>
     </div>
 
-<!-- SERVICES SECTION (images removed from HTML) -->
+<!-- SERVICES SECTION -->
     <section class="section" id="services" style="background:#f8fafc;">
         <h2 class="section-title fade-in" id="services-title">Our Most Popular Services</h2>
         <div class="services-grid">
@@ -120,17 +120,19 @@
         </div>
     </section>
 
-    <!-- OUR WORK -->
+      <!-- OUR WORK -->
     <section class="section" id="work">
         <h2 class="section-title fade-in" id="work-title">Real Results in the RGV</h2>
         <div class="before-after-grid">
+            <!-- Before -->
             <div class="ba-card fade-in">
                 <h3 style="padding:1rem 1.5rem; background:#f8fafc;">Before</h3>
-                <img src="https://picsum.photos/id/870/800/500" alt="Before" loading="lazy" width="800" height="500">
+                <div class="ba-image before-image"></div>
             </div>
+            <!-- After -->
             <div class="ba-card fade-in">
                 <h3 style="padding:1rem 1.5rem; background:#f8fafc;">After</h3>
-                <img src="https://picsum.photos/id/1015/800/500" alt="After" loading="lazy" width="800" height="500">
+                <div class="ba-image after-image"></div>
             </div>
         </div>
     </section>
@@ -144,7 +146,8 @@
                 <br>
                 <p><strong>Our promise:</strong> Reliable service, honest pricing, and lawns you’ll be proud to show off.</p>
             </div>
-            <img src="https://picsum.photos/id/1016/800/600" alt="Team" loading="lazy" width="800" height="600" class="fade-in">
+            <!-- Team photo now controlled by CSS -->
+            <div class="about-image fade-in"></div>
         </div>
     </section>
 
@@ -163,6 +166,10 @@
             <div class="testimonial fade-in">
                 <p id="testimonial3">"Exceptional service and very reliable. Césped G is my go-to for all landscaping needs."</p>
                 <strong>— Elena T., Edinburg</strong>
+            </div>
+            <div class="testimonial fade-in">
+                <p id="testimonial4">"I've been using Césped G for over a year now, and my lawn has never looked better!"</p>
+                <strong>— Carlos M., Harlingen</strong>
             </div>
         </div>
     </section>
@@ -202,13 +209,23 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <p style="font-size:1.3rem; color:var(--accent);">© 2026 Césped G, LLC</p>
-            <p>Weslaco, Texas • Serving the entire Rio Grande Valley</p>
-            <a href="tel:9566788454" style="color:#4ADE80; font-size:1.5rem;">(956) 678-8454</a>
+ <!-- Footer -->   
+<footer>
+    <div class="footer-content">
+        <p class="location">Weslaco, Texas • Serving the entire Rio Grande Valley</p>
+        <a href="tel:9566788454" class="phone-link">(956) 678-8454</a>
+        
+        <a href="https://calendly.com/cespedgtx/15min" target="_blank" class="book-now-btn">Book Now</a>
+        
+        <div class="socials">
+            <a href="https://wa.me/19566788454" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
         </div>
-    </footer>
+        
+        <p class="copyright">© 2026 Césped G, LLC</p>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>

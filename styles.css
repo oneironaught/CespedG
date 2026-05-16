@@ -163,7 +163,6 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* New image container - controlled entirely in CSS */
 .service-image {
     height: 240px;
     background-size: cover;
@@ -171,7 +170,6 @@ body {
     background-repeat: no-repeat;
 }
 
-/* YOUR ASSETS GO HERE - replace the URLs with your own files */
 .service-card-1 .service-image { background-image: url('assets/images/bermuda-renovation.png'); }
 .service-card-2 .service-image { background-image: url('assets/images/man_mowing.jpg'); }
 .service-card-3 .service-image { background-image: url('assets/images/weed-control.png'); }
@@ -180,6 +178,53 @@ body {
 /* Card content (text) */
 .card-content {
     padding: 1.8rem;
+}
+
+/* ==============================================
+   OUR WORK - Before / After Images (CSS only)
+   ============================================== */
+.ba-image {
+    height: 320px;           /* adjust height if needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Replace these URLs with your own files in assets/ */
+.before-image { 
+    background-image: url('assets/images/before_yard.png'); 
+}
+.after-image { 
+    background-image: url('assets/images/res_mowing.jpg'); 
+}
+
+/* ==============================================
+   ABOUT SECTION - Team Photo (CSS only)
+   ============================================== */
+.about-image {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;       /* adjust to match your photo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Replace this URL with your team photo */
+.about-image {
+    background-image: url('assets/images/rey_self.jpg');
+}
+
+/* Optional: make sure the about-grid still looks good */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* BEFORE / AFTER */
@@ -270,18 +315,77 @@ form textarea {
 }
 
 /* FOOTER */
+/* ====================== ULTRA-COMPACT DARK FOOTER ====================== */
 footer {
     background: #111;
     color: #ddd;
-    padding: 4rem 5% 2rem;
 }
+
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 2rem;
+    padding: 1.1rem 5% 0.9rem;     /* Significantly reduced padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;                  /* Very tight spacing */
+}
+
+.location {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.phone-link {
+    color: #4ADE80;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.phone-link:hover { color: #fff; }
+
+.book-now-btn {
+    background: #4ADE80;
+    color: #000;
+    padding: 0.5rem 1.6rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 0.1rem 0;
+}
+
+.book-now-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(74,222,128,0.4);
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    margin: 0.2rem 0;
+}
+
+.social-icon {
+    color: #4ADE80;
+    font-size: 1.45rem;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 0.5rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid #333;
+    width: 100%;
 }
 
 /* FADE-IN ANIMATION */
@@ -306,4 +410,22 @@ footer {
         grid-template-columns: 1fr;
     }
     .hero { min-height: 600px; }
+}
+
+/* Mobile - stack the image below text */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-image {
+        min-height: 320px;
+    }
+}
+
+/* Mobile - even tighter */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 1rem 5% 0.8rem;
+        gap: 0.45rem;
+    }
 }
