@@ -174,6 +174,8 @@ body {
 .service-card-2 .service-image { background-image: url('assets/images/man_mowing.jpg'); }
 .service-card-3 .service-image { background-image: url('assets/images/weed-control.png'); }
 .service-card-4 .service-image { background-image: url('assets/images/res_mowing.jpg'); }
+.service-card-5 .service-image { background-image: url('assets/images/leaf_removal.png'); }
+.service-card-6 .service-image { background-image: url('assets/images/yard_cleanup.png'); }
 
 /* Card content (text) */
 .card-content {
@@ -195,7 +197,7 @@ body {
     background-image: url('assets/images/before_yard.png'); 
 }
 .after-image { 
-    background-image: url('assets/images/res_mowing.jpg'); 
+    background-image: url('assets/images/after_yard.jpg'); 
 }
 
 /* ==============================================
@@ -240,16 +242,6 @@ body {
 }
 .ba-card img { width: 100%; height: auto; display: block; }
 
-/* ABOUT */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
 /* TESTIMONIALS */
 .testimonials {
     display: grid;
@@ -263,8 +255,21 @@ body {
     font-style: italic;
 }
 
+/* ABOUT */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
 /* FAQ */
 .faq {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 16px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -315,10 +320,10 @@ form textarea {
 }
 
 /* FOOTER */
-/* ====================== ULTRA-COMPACT DARK FOOTER ====================== */
 footer {
     background: #111;
     color: #ddd;
+    padding: 1.5rem 5%;
 }
 
 .footer-content {
@@ -369,7 +374,7 @@ footer {
 }
 
 .social-icon {
-    color: #4ADE80;
+    color: white;
     font-size: 1.45rem;
     transition: all 0.3s;
 }

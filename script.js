@@ -119,28 +119,55 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
-// ==================== FORMSPREE + OLD BILINGUAL ALERT ====================
+// ==================== CONTACT FORM - Auto clear after submit (Formspree) ====================
 const form = document.getElementById('quote-form');
-form.addEventListener('submit', function(e) {
-    // Formspree will handle the actual email send
-    const btn = form.querySelector('button');
-    const originalText = btn.textContent;
-    
-    btn.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
-    btn.disabled = true;
 
-    // Optional: show success message after a tiny delay (Formspree submits automatically)
-    setTimeout(() => {
-        const name = document.getElementById('name').value || (currentLang === 'es' ? 'amigo' : 'friend');
-        alert(currentLang === 'es' 
-            ? `¡Gracias ${name}! Te contactaremos en las próximas horas. 🇲🇽` 
-            : `Thank you ${name}! We'll get back to you shortly.`);
-        
-        form.reset();
-        btn.textContent = originalText;
-        btn.disabled = false;
-    }, 800);
-});
+if (form) {
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();   // Prevents page reload
+
+        const btn = form.querySelector('button');
+        const originalText = btn.textContent;
+
+        // Show loading state
+        btn.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+        btn.disabled = true;
+
+        // Capture name for thank-you message
+        const submittedName = document.getElementById('name').value.trim() || '';
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                // ✅ Clear the form immediately
+                form.reset();
+
+                const name = submittedName || (currentLang === 'es' ? 'amigo' : 'friend');
+                
+                alert(currentLang === 'es'
+                    ? `¡Gracias ${name}! Te contactaremos en las próximas horas. 🇲🇽`
+                    : `Thank you ${name}! We'll get back to you shortly.`);
+            } else {
+                throw new Error('Submission failed');
+            }
+        } catch (error) {
+            alert(currentLang === 'es'
+                ? 'Hubo un error. Por favor intenta de nuevo.'
+                : 'Something went wrong. Please try again.');
+        } finally {
+            // Restore button
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }
+    });
+}
 
 // ==================== SMOOTH SCROLLING ====================
 document.querySelectorAll('.nav-link').forEach(link => {
